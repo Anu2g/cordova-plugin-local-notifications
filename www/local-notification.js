@@ -314,6 +314,11 @@ exports.registerPermission = function (callback, scope) {
     this.core.registerPermission(callback, scope);
 };
 
+/**
+ * Register categories for Android.
+ * register categories.
+ * @param categories
+ */
 exports.registerCategories = function(categories) {
     cordova.exec(null, null, 'LocalNotification', 'registerCategories', [categories]);
 };

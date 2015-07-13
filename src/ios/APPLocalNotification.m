@@ -61,6 +61,18 @@
     [eventQueue removeAllObjects];
 }
 
+
+//We only need to registerCategories in Android.
+- (void) registerCategories:(CDVInvokedUrlCommand*)command
+{
+    CDVPluginResult *result = [CDVPluginResult
+                               resultWithStatus:CDVCommandStatus_ERROR
+                               messageAsString: @"registerCategories is only supported for android"];
+
+    [self.commandDelegate sendPluginResult:result
+                                callbackId:command.callbackId];
+}
+
 /**
  * Schedule a set of notifications.
  *
