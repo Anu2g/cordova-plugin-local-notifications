@@ -23,6 +23,7 @@
 
 #import "UIApplication+APPLocalNotification.h"
 #import "UILocalNotification+APPLocalNotification.h"
+#import "Hurdlr-Swift.h"
 
 @implementation UIApplication (APPLocalNotification)
 
@@ -70,8 +71,7 @@
         settings = [UIUserNotificationSettings settingsForTypes:types
                                                      categories:nil];
 
-        [[UIApplication sharedApplication]
-         registerUserNotificationSettings:settings];
+        [TraxDistanceNotificationManager registerUserNotificationSettings:settings];
     }
 }
 
